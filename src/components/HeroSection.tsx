@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Linkedin, Sparkles } from 'lucide-react';
 import { useEffect } from 'react';
-import sachaPortrait from '@/assets/sacha-portrait.jpg';
+import sachaPortrait from '@/assets/sacha-portrait.svg';
 
 // Declare the custom element for TypeScript
 declare global {
