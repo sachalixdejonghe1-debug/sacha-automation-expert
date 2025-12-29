@@ -1,17 +1,47 @@
 import { ArrowRight, Download, Linkedin, Sparkles } from 'lucide-react';
+import { useEffect } from 'react';
 import sachaPortrait from '@/assets/sacha-portrait.jpg';
 
+// Declare the custom element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { url?: string }, HTMLElement>;
+    }
+  }
+}
+
 const HeroSection = () => {
+  useEffect(() => {
+    // Dynamically load the Spline viewer script
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://unpkg.com/@splinetool/viewer@1.12.28/build/spline-viewer.js';
+    document.head.appendChild(script);
+    
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Spline 3D Background */}
+      <div className="absolute inset-0 z-0">
+        <spline-viewer 
+          url="https://prod.spline.design/4rNJPFKtLuZZYJ64/scene.splinecode"
+          className="w-full h-full"
+        />
+      </div>
+
       {/* Background Glow Effects */}
-      <div className="glow-orb-primary w-[500px] h-[500px] -top-20 -left-20 animate-pulse-glow" />
-      <div className="glow-orb-secondary w-[400px] h-[400px] top-1/3 -right-32 animate-pulse-glow animation-delay-400" />
-      <div className="glow-orb-accent w-[300px] h-[300px] bottom-20 left-1/4 animate-pulse-glow animation-delay-600" />
+      <div className="glow-orb-primary w-[500px] h-[500px] -top-20 -left-20 animate-pulse-glow z-[1]" />
+      <div className="glow-orb-secondary w-[400px] h-[400px] top-1/3 -right-32 animate-pulse-glow animation-delay-400 z-[1]" />
+      <div className="glow-orb-accent w-[300px] h-[300px] bottom-20 left-1/4 animate-pulse-glow animation-delay-600 z-[1]" />
 
       {/* Grid Pattern Overlay */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] z-[1]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='white'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
         }}
