@@ -91,7 +91,7 @@ const HeroSection = () => {
               {/* Spline container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden">
                 <spline-viewer 
-                  url="https://prod.spline.design/4rNJPFKtLuZZYJ64/scene.splinecode"
+                  url="https://prod.spline.design/da7dcvLqqlOMjoNl/scene.splinecode"
                   className="w-full h-full"
                   style={{ width: '100%', height: '100%' }}
                 />
