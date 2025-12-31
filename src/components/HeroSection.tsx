@@ -1,6 +1,5 @@
 import { ArrowRight, Download, Linkedin, Sparkles } from 'lucide-react';
 import { useEffect } from 'react';
-import sachaPortrait from '@/assets/sacha-portrait.svg';
 
 // Declare the custom element for TypeScript
 declare global {
@@ -26,18 +25,10 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0">
-        <spline-viewer 
-          url="https://prod.spline.design/4rNJPFKtLuZZYJ64/scene.splinecode"
-          className="w-full h-full"
-        />
-      </div>
-
       {/* Background Glow Effects */}
-      <div className="glow-orb-primary w-[500px] h-[500px] -top-20 -left-20 animate-pulse-glow z-[1]" />
-      <div className="glow-orb-secondary w-[400px] h-[400px] top-1/3 -right-32 animate-pulse-glow animation-delay-400 z-[1]" />
-      <div className="glow-orb-accent w-[300px] h-[300px] bottom-20 left-1/4 animate-pulse-glow animation-delay-600 z-[1]" />
+      <div className="glow-orb-primary w-[500px] h-[500px] -top-20 -left-20 animate-pulse-glow" />
+      <div className="glow-orb-secondary w-[400px] h-[400px] top-1/3 -right-32 animate-pulse-glow animation-delay-400" />
+      <div className="glow-orb-accent w-[300px] h-[300px] bottom-20 left-1/4 animate-pulse-glow animation-delay-600" />
 
       {/* Grid Pattern Overlay */}
       <div
@@ -91,21 +82,19 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Photo */}
+          {/* Spline 3D Animation */}
           <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-scale-in animation-delay-200">
             <div className="relative">
-              {/* Glow behind photo */}
+              {/* Glow behind animation */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-3xl opacity-30 scale-110" />
               
-              {/* Photo container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl">
-                <img
-                  src={sachaPortrait}
-                  alt="Sacha - Expert Marketing Digital & Automatisation"
-                  className="w-full h-full object-cover"
+              {/* Spline container */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden">
+                <spline-viewer 
+                  url="https://prod.spline.design/4rNJPFKtLuZZYJ64/scene.splinecode"
+                  className="w-full h-full"
+                  style={{ width: '100%', height: '100%' }}
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </div>
 
               {/* Floating badges */}
