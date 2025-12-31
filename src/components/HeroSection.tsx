@@ -83,7 +83,7 @@ const HeroSection = () => {
           </div>
 
           {/* Spline 3D Animation */}
-          <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-scale-in animation-delay-200">
+          <div className="order-1 lg:order-2 flex justify-center items-center opacity-0 animate-scale-in animation-delay-200">
             <div className="relative">
               {/* Glow behind animation */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-3xl opacity-30 scale-110" />
