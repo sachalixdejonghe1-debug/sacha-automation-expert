@@ -89,7 +89,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-3xl opacity-30 scale-110" />
               
               {/* Spline container */}
-              <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-2xl overflow-hidden">
+              <div className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[550px] lg:h-[550px] rounded-2xl overflow-hidden" style={{ transform: 'scaleX(-1)' }}>
                 <spline-viewer 
                   url="https://prod.spline.design/da7dcvLqqlOMjoNl/scene.splinecode"
                   className="w-full h-full"
